@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+}
+header{
+    background-color: rgb(11,0,208);
+    color: white;
+}
+.shop{
+    text-decoration: underline;
+}
+.logo{
+    font-weight: 700;
+    display: inline-block;
+    padding: 10px;
+    margin-right: 1%;
+}
+.headerButton {
+    display: inline;
+    float: right;
+    background-color: rgb(11,0,208);
+    color: white;
+    border: 0px;
+    padding: 10px;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
+    align-content: space-around;
+}
+.col1{
+    width: 30%;
+}
+.col2 {
+    width: 70%;
+}
+.Item{
+    display: inline-block;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 2%;
+    text-align: center;
+    margin-top: 10px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+.Item img{
+    width: 250px;
+}
+
+.Item button{
+    color: grey;
+    padding: 2%;
+    border: 1px solid gray;
+    border-radius: 3px;
+}
+
+@media only screen and (max-width: 807px) {
+    .grid-container{
+        grid-template-columns: auto auto;
+    }
+}
+@media only screen and (max-width: 406px) {
+    .grid-container{
+        grid-template-columns: auto;
+    }
+}

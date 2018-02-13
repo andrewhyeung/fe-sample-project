@@ -8,7 +8,9 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [{
+    loaders: [
+      { test: /\.json$/, loader: 'json' },
+      {
       exclude: /node_modules/,
       loader: 'babel',
       query: {
