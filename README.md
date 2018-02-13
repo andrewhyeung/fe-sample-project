@@ -1,25 +1,8 @@
-# ReduxSimpleStarter
+Shopping Cart Project
+=======
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+This simple project is intended to give us a taste of your personal coding style. Please do your best to create an interactive and *responsive* UI that matches the mockups in the PDF file in this repo. Don't fret over completeness or correctness of the product. We would like to see what you can produce in just a few hours of coding. We're looking for your approach to the problem, how you organize your code, what features you see in the mockup and any ways you might improve things. To submit the code to us, fork this project and send us a link to your code on github.com.
 
-### Getting Started
+We used the [Lato font](https://fonts.google.com/specimen/Lato "The Lato Font") in the example and have provided stock images for you to work with. The data about the products can be found in the JSON payload file. Feel free to use any modern framework that works for you. In house we like to see React, Angular, jQuery, and plain old JS! There's no need to code up a backend to this but you are welcome to do so if you want to. :) For more guidance [check out our job listing](https://sellbrite.workable.com/jobs/651045)
 
-There are two methods for getting started with this repo.
-
-#### Familiar with Git?
-Checkout this repo, install dependencies, then start the gulp process with the following:
-
-```
-> git clone https://github.com/StephenGrider/ReduxSimpleStarter.git
-> cd ReduxSimpleStarter
-> npm install
-> npm start
-```
-
-#### Not Familiar with Git?
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
-
-```
-> npm install
-> npm start
-```
+**Happy coding!**
