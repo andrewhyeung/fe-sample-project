@@ -10,8 +10,9 @@ export default class App extends Component {
     render() {
         return (
             <div>
+                <div className="blur-filter"></div>
                 <Header />
-                <div>Shop our featured collection</div>
+                <div className="message">Shop our featured collection</div>
                 <div className="grid-container">{Products.products.map((data)=>{
                     return <Item key={data.price} filename={data.filename} price={data.price} name={data.name} />
                 })}

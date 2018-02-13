@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import { addToCart } from '../actions/index'
 import { bindActionCreators } from 'redux'; 
 
-class Item extends Component {
+class CartItem extends Component {
     constructor(props){
         super(props)
         this.state = {
@@ -14,7 +14,7 @@ class Item extends Component {
     }
     render() {
         return (
-            <div className='Item'>   
+            <div className='cartItem'>   
                 <img src={"../images/"+this.props.filename}/>
                 <p>{this.props.name}</p>
                 <p>${(this.props.price/100).toFixed(2)}</p>
@@ -34,4 +34,4 @@ function mapDispatchToProps(dispatch){
 	return bindActionCreators({ addToCart: addToCart }, dispatch);
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Item)
+export default connect(mapStateToProps,mapDispatchToProps)(CartItem)

@@ -10,8 +10,7 @@ export default class Modal extends Component {
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            zIndex: '9999',
-            // background: ''
+            zIndex: '9998',
             textAlign:'center'
         }
         if (this.props.width && this.props.height) {
@@ -32,8 +31,13 @@ export default class Modal extends Component {
             height: '100%',
             top: '0px',
             left: '0px',
-            zIndex: '9998',
-            background: 'rgba(0, 0, 0, 0.1)'
+            zIndex: '9997',
+            background: 'rgba(0, 0, 0, 0.9)',
+            WebkitFilter: "blur(5px)",
+            MozFilter: "blur(5px)",
+            OFilter: "blur(5px)",
+            MsFilter: "blur(5px)",
+            filter: "blur(5px)"
         }
         if (this.props.backdropStyle) {
             for (let key in this.props.backdropStyle) {
@@ -41,12 +45,12 @@ export default class Modal extends Component {
             }
         }
         return (
-            <div className={this.props.containerClassName}>
-              <div className={this.props.className} style={modalStyle}>
+            <div >
+              <div style={modalStyle}>
                 {this.props.children}
               </div>
               {!this.props.noBackdrop &&
-                  <div className={this.props.backdropClassName} style={backdropStyle}
+                  <div className="blur-filter" style={backdropStyle}
                        onClick={e => this.close(e)}/>}
             </div>
         )
