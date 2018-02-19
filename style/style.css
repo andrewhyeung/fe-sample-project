@@ -21,6 +21,30 @@ header{
 .modal{
     color: black;
 }
+table{
+    width: 25vw;
+}
+table td,
+table th
+{
+    text-align:left;
+}
+
+table td + td,
+ttable th + th
+{
+    text-align:right;
+    vertical-align: top;
+}
+.exitButton{
+    background-color: lightgrey;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    line-height: 15px;
+    text-align: center;
+    font-size: .7em;
+}
 .message{
     padding: 10px;
 }
@@ -44,7 +68,7 @@ header{
 }
 .grid-container{
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     justify-content: space-around;
     align-content: space-around;
 }
@@ -84,9 +108,11 @@ header{
     padding: 5px;
     background-color: white;
 }
-.cartItem img{
-    width:30px;
-    height: 30px;
+td img{
+    width:60px;
+    height:60px;
+    object-fit: cover;
+
 }
 
 @media only screen and (max-width: 807px) {

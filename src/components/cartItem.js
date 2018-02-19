@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'; 
-import { addToCart } from '../actions/index'
+import { removeFromCart } from '../actions/index'
 import { bindActionCreators } from 'redux'; 
 
 class CartItem extends Component {
@@ -14,24 +14,28 @@ class CartItem extends Component {
     }
     render() {
         return (
-            <div className='cartItem'>   
-                <img src={"../images/"+this.props.filename}/>
-                <p>{this.props.name}</p>
-                <p>${(this.props.price/100).toFixed(2)}</p>
-                <button onClick={()=>this.props.addToCart(this.props)}>
-                    Add to Cart
-                </button>
-            </div>
+                <tr className='cartItem'>
+                    <td>
+                        <img src={"../images/"+this.props.filename} />
+                    </td>
+                    <td>
+                        <div>{this.props.name}</div>
+                        <div>${(this.props.price/100).toFixed(2)}</div>
+                    </td>
+                    <td><div onClick={() => this.props.removeFromCart(this.props)} className="exitButton">x</div></td>
+                </tr>
         );
     }
 }
 
 function mapStateToProps(state){
-	return {
+    // console.log('cartitem mapStateToProps', state); 
+    return {
+
 	}
 }
 function mapDispatchToProps(dispatch){
-	return bindActionCreators({ addToCart: addToCart }, dispatch);
+	return bindActionCreators({ removeFromCart: removeFromCart }, dispatch);
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(CartItem)

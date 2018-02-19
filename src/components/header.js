@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Modal from './modal';
 import {connect} from 'react-redux'; 
-import Item from './Item';
-import CartItem from './cartItem'
+import Item from './item';
+import CartItem from './cartItem';
 
 class Header extends Component {
     constructor(props){
@@ -10,12 +10,6 @@ class Header extends Component {
         this.state = {
             isModalOpen : false
         }
-    }
-    renderCart(){
-        this.props.cart.map((item)=>{
-            console.log(item)
-            return <Item key={item.price} filename={item.filename} price={item.price} name={item.name} />
-        })
     }
     render() {
         return (
@@ -28,11 +22,19 @@ class Header extends Component {
                 <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
                     <h1>Your Cart</h1>
                     <table>
-                        {this.props.cart.map((item)=>{
-                            return <img src={"../images/"+item.filename}/>
-                        })}
-                        <hr></hr>
-                        <div>Total</div>
+                        <tbody>
+                            {this.props.cart.map((item)=>{
+                                return <CartItem key={item.price} filename={item.filename} name={item.name} price={item.price}/>
+                            })}
+                            <tr>
+                                <td>
+                                    <div>Total</div>
+                                </td>
+                                <td>
+                                    <div>${this.props.total}</div>
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
                     <button className="button" onClick={() => this.closeModal()}>Back</button>
                 </Modal>
@@ -49,9 +51,26 @@ class Header extends Component {
 
 function mapStateToProps(state){
     console.log('state inside the cart', state.cart)
-	return {
-		cart: state.cart
-	}
+    let prices = state.cart.map((item)=>{
+        return item.price
+    })
+    if(prices.length>0){
+        const reducer = (accumulator, currentValue) => accumulator + currentValue;
+        let totalPrice = prices.reduce(reducer);
+        console.log('the total price', totalPrice) 
+        const finalPrice= (totalPrice/100).toFixed(2)
+        return {
+            cart: state.cart, 
+            total: finalPrice
+        }
+    }
+    else {
+        return {
+            cart: state.cart, 
+            total: 0
+        }
+    }
+	
 }
 
 
